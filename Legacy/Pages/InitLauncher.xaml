@@ -1,0 +1,36 @@
+﻿<Page x:Class="Arcane_Launcher.Pages.InitLauncher"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Arcane_Launcher.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="InitLauncher">
+    <Grid Background="#101014">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="LoadingText"  Text="Loading..." Foreground="White" Margin="10, 0, 0, -5" VerticalAlignment="Bottom" Grid.Row="0"/>
+        <Border Height="10" Margin="10" Grid.Row="1" CornerRadius="5" Background="Transparent" BorderBrush="Transparent">
+            <Border CornerRadius="5" Background="#60abf7" BorderBrush="Transparent">
+                <ProgressBar IsIndeterminate="True" Foreground="#0078f2" Background="Transparent" BorderThickness="0"/>
+            </Border>
+        </Border>
+
+        <Grid x:Name="ErrorOverlay" Background="#80000000" Visibility="Collapsed">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                <Border Background="Black" Padding="20" BorderBrush="Red" BorderThickness="1" CornerRadius="0">
+                    <StackPanel>
+                        <TextBlock x:Name="ErrorTitle" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ErrorMessage" FontSize="16" Foreground="White" HorizontalAlignment="Center"/>
+                        <Button Content="Close" HorizontalAlignment="Center" Click="CloseErrorOverlay" Margin="5, 10" Padding="10"
+                                BorderBrush="Red" Background="Transparent" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

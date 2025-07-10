@@ -1,0 +1,95 @@
+﻿<Page x:Class="Arcane_Launcher.Pages.Launcher.ViewPages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Arcane_Launcher.Pages.Launcher.ViewPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="980"
+      Title="Home">
+
+    <Grid Background="#101014">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="60" CornerRadius="10" Margin="0, 20, 15, 0" Background="#232323">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Resources/Epic/Logo.png" HorizontalAlignment="Left" Height="30" Width="Auto" Margin="10, 0, 0, 0"/>
+                <TextBlock x:Name="DisplayNameWelcome" Grid.Column="1"  Text="Welcome Pongo_x86" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0, 0" />
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="980" Height="400" Margin="0, 10, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="News!" Foreground="White" FontSize="22" Margin="5, 0, 0, 0" />
+            <Border Grid.Row="1" Background="#232323" HorizontalAlignment="Center" VerticalAlignment="Center" Width="960" Height="350" Margin="0, 5, 10, 0" CornerRadius="10">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Margin="10">
+                        <Image Source="https://cdn2.unrealengine.com/s25-lobby-4k-4096x2048-4a832928e11f.jpg" Stretch="Fill"/>
+                        <Border Background="#000000AA" VerticalAlignment="Bottom" Height="80">
+                            <Border Opacity="0.9" Margin="8" CornerRadius="10" Background="#232323">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="Legacy" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="Welcome to Legacy!" FontSize="12" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    
+                    <Grid Grid.Column="1" Margin="10">
+                        <Image Source="http://legacy-service-prod.ol.evolvefn.com:3551/imagecdn/lightlobbybg.png" Stretch="Fill"/>
+                        <Border Background="#000000AA" VerticalAlignment="Bottom" Height="80">
+                            <Border Opacity="0.9" Margin="8" CornerRadius="10" Background="#232323">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="Welcome To ArcaneV5!" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="Welcome to ArcaneV5, Powering better multiplayer experiences than before!" FontSize="12" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="75" CornerRadius="10" Margin="0, 15, 15, 0" Background="#232323">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Launch Fortnite?" Foreground="White" VerticalAlignment="Center" FontSize="20" Margin="10, 0, 0, 0"/>
+                <Button Grid.Column="1" Click="LaunchButton_Click" Cursor="Hand" Content="Launch" FontSize="20" Background="#1A1A1A" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="150" Margin="0, 0, 10, 0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="BorderElement" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                                CornerRadius="8" Padding="10,0,0,0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="BorderElement" Property="Background" Value="#2A2A2A"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
