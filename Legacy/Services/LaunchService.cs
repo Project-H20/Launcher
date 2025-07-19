@@ -82,10 +82,7 @@ namespace Arcane_Launcher.Services
                 LaunchService.FortniteGame.Exited += new EventHandler(LaunchService.OnFortniteExit);
                 LaunchService.FortniteGame.Start();
                 Utils.Logger.good("Successfully launched the fortnite game client!");
-                if (Properties.Settings.Default.Season < 5)
-                {
-                    DllInjector.InjectDLL(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "GFSDK_Aftermath_Lib.x64.dll"), LaunchService.FortniteGame);
-                }
+                DllInjector.InjectDLL(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "GFSDK_Aftermath_Lib.x64.dll"), LaunchService.FortniteGame);
             }
         }
 
