@@ -24,7 +24,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Legacy" Foreground="White" FontSize="32" FontWeight="SemiBold" VerticalAlignment="Center" Grid.Column="0"/>
-                    <Image Source="https://avatars.githubusercontent.com/u/202678516" Width="50" Height="50" VerticalAlignment="Center" Grid.Column="1" Margin="10, 0, 0, 0">
+                    <Image Source="/Resources/legacy.png" Width="50" Height="50" VerticalAlignment="Center" Grid.Column="1" Margin="10, 0, 0, 0">
                         <Image.Effect>
                             <DropShadowEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="0.3" BlurRadius="5"/>
                         </Image.Effect>
